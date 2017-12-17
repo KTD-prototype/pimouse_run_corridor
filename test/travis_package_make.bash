@@ -1,11 +1,6 @@
 #!/bin/bash -xve
 
-#ワークスペースにリポジトリをコピー
-rsync -av ./ ~/catkin_ws/src/pimouse_run_corridor/
-
-#pimouse_rosをgit clone でワークスペースに持ってくる
-cd ~/catkin_ws/src/
-git clone --depth=1 https://github.com/k24koba/pimouse_ros.git
-
+#sync and make
+rsync -av ./ ~/catkin_ws/src/pimouse_ros/
 cd ~/catkin_ws
 catkin_make
